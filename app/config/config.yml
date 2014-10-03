@@ -1,0 +1,54 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+
+framework:
+    translator:
+        fallback: "%locale%"
+    default_locale: "%locale%"
+    secret: "%secret%"
+    router:
+        resource: "%kernel.root_dir%/config/routing.yml"
+        strict_requirements: ~
+    form: ~
+    csrf_protection: ~
+    validation:
+        enable_annotations: true
+    templating:
+        engines: ["twig"]
+        #assets_version: SomeVersionScheme
+    trusted_hosts:   ~
+    trusted_proxies: ~
+    session:
+        name: "%app.name%_session"
+        cookie_httponly: true
+    fragments: ~
+    http_method_override: true
+
+twig:
+    debug:            "%kernel.debug%"
+    strict_variables: "%kernel.debug%"
+
+doctrine:
+    dbal:
+        driver:   "%database.driver%"
+        host:     "%database.host%"
+        port:     "%database.port%"
+        dbname:   "%database.name%"
+        user:     "%database.user%"
+        password: "%database.password%"
+        charset:  UTF8
+
+    orm:
+        auto_generate_proxy_classes: "%kernel.debug%"
+        auto_mapping: true
+
+swiftmailer:
+    transport: "%mailer.transport%"
+    host:      "%mailer.host%"
+    username:  "%mailer.user%"
+    password:  "%mailer.password%"
+    spool:
+        type: memory
+

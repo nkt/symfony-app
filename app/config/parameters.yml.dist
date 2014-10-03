@@ -1,0 +1,27 @@
+parameters:
+    app.name:          app
+
+    database.driver:   pdo_mysql
+    database.host:     127.0.0.1
+    database.port:     ~
+    database.name:     symfony
+    database.user:     root
+    database.password: ~
+
+    mailer.transport:  smtp
+    mailer.host:       127.0.0.1
+    mailer.user:       ~
+    mailer.password:   ~
+    mailer.from:       ~
+
+    logger.email_from: "%mailer.from%"
+    logger.email_to:   ~
+
+    locale:            en
+    secret:            ThisTokenIsNotSoSecretChangeIt
+
+    debug.toolbar:     true
+    debug.redirects:   false
+
+    cache.validation:  apc
+    cache.doctrine:    apc

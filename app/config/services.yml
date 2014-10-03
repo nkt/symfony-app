@@ -1,0 +1,6 @@
+parameters:
+    monolog.formatter.html.class: Monolog\Formatter\HtmlFormatter
+
+services:
+    monolog.formatter.html:
+        class: "%monolog.formatter.html.class%"

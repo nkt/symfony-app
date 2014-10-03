@@ -1,0 +1,37 @@
+imports:
+    - { resource: config.yml }
+
+framework:
+    validation:
+        cache: "%cache.validation%"
+
+doctrine:
+    orm:
+        metadata_cache_driver: "%cache.doctrine%"
+        result_cache_driver: "%cache.doctrine%"
+        query_cache_driver: "%cache.doctrine%"
+
+monolog:
+    handlers:
+        main:
+            type: fingers_crossed
+            action_level: critical
+            handler: grouped
+        grouped:
+            type: group
+            members: [streamed, buffered]
+        streamed:
+            type: stream
+            level: debug
+            path: "%kernel.logs_dir%/%kernel.environment%.log"
+        buffered:
+            type: buffer
+            handler: swift
+        swift:
+            type: swift_mailer
+            level: debug
+            subject: "Error in %app.name%"
+            from_email: "%logger.email_from%"
+            to_email: "%logger.email_to%"
+            formatter: monolog.formatter.html
+            content_type: "text/html"
