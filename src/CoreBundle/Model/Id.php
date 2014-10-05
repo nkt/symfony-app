@@ -4,7 +4,7 @@ namespace App\CoreBundle\Model;
 
 use Doctrine\ORM\Mapping as ORM;
 
-class Id
+trait Id
 {
     /**
      * @var int
