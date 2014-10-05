@@ -23,3 +23,4 @@ if [ -f "$DATABASE_INSTALL_SCRIPT" ]; then
 else
     >&2 echo "Wrong database type!"
 fi
+# ${SCRIPTS_PATH}/db/redis.sh
