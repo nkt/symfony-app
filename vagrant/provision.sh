@@ -1,15 +1,12 @@
 #!/usr/bin/env bash
 
-APP_PATH=$1
-DATABASE=$2
-DATABASE_ROOT_PASSWORD=$3
-SCRIPTS_PATH=${APP_PATH}/vagrant/scripts
+DATABASE=$1
+DATABASE_ROOT_PASSWORD=$2
+SCRIPTS_PATH=/vagrant/vagrant/scripts
 
 sudo apt-get -y update
 sudo apt-get -y upgrade
 sudo apt-get -y dist-upgrade
-
-export APP_CONF_PATH=${APP_PATH}/vagrant/etc
 
 ${SCRIPTS_PATH}/common.sh
 ${SCRIPTS_PATH}/git.sh
