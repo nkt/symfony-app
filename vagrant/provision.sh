@@ -15,6 +15,7 @@ ${SCRIPTS_PATH}/common.sh
 ${SCRIPTS_PATH}/git.sh
 ${SCRIPTS_PATH}/nginx.sh
 ${SCRIPTS_PATH}/php.sh
+# ${SCRIPTS_PATH}/hhvm.sh
 ${SCRIPTS_PATH}/node.sh
 ${SCRIPTS_PATH}/python.sh
 ${SCRIPTS_PATH}/ruby.sh
