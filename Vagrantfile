@@ -1,7 +1,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
 APP_PATH = "/var/www/app"
-DB_TYPE = "mysql" # or postgresql
+DB_TYPE = "mysql" # postgresql/sqlite
 DB_ROOT_PWD = "root"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
