@@ -1,7 +1,6 @@
 VAGRANTFILE_API_VERSION = "2"
 
-DB_TYPE = "mysql" # postgresql/sqlite
-DB_ROOT_PWD = "root"
+DB_TYPE = "postgresql" # mysql/sqlite
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.box = "ubuntu/trusty64"
@@ -12,8 +11,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         :nfs => /darwin|linux/ =~ RUBY_PLATFORM
 
     config.vm.provider "virtualbox" do |vb|
+        # vb.name = "vm_name"
+        vb.memory = 1024
         vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
-        vb.customize ["modifyvm", :id, "--memory", 1024]
     end
 
     config.vm.provision :shell do |shell|
