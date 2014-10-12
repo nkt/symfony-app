@@ -1,6 +1,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
 DB_TYPE = "postgresql" # mysql/sqlite
+DB_ROOT_PWD = "vagrant"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.box = "ubuntu/trusty64"
